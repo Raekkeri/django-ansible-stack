@@ -1,0 +1,11 @@
+# usage: ansible-playbook example-playbook.yml --extra-vars="user=ssh_user"
+---
+- hosts: webservers
+  sudo: yes
+  vars_files:
+    - vars/default.yml
+  user: ${user}
+  tasks:
+    - include: tasks/postgresql.yml
+  #handlers:
+    #- include: handlers/nginx.yml
