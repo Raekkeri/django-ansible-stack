@@ -1,0 +1,8 @@
+- name: Ensure nginx runs with the latest uwsgi configuration file
+  template: src=templates/nginx_uwsgi.conf dest=/etc/nginx/sites-available/nginx_uwsgi.conf
+  notify:
+    - restart nginx
+- name: Enable uwsgi conf
+  file: src=/etc/nginx/sites-available/nginx_uwsgi.conf dest=/etc/nginx/sites-enabled/nginx_uwsgi.conf state=link
+  notify:
+    - restart nginx
