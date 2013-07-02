@@ -1,0 +1,7 @@
+- name: Ensure Python development tools are availble
+  apt: pkg=python-dev state=latest
+- name: Ensure virtualenv is installed
+  apt: pkg=python-virtualenv state=latest
+#- Ensure Python uwsgi plugin is installed
+  #apt-get install uwsgi-plugin-python
+  #apt: uwsgi-plugin-python
