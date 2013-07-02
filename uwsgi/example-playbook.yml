@@ -4,12 +4,9 @@
   sudo: yes
   vars_files:
     - vars/default.yml
+    - [env_specific.yml, vars/default.yml]
   user: ${user}
   tasks:
     - include: tasks/uwsgi.yml
-      #vars: override these to match the directory structure
-        #chdir: /home/user/project/django_project
-        #home: /home/user/project/venv
-        #module: project.wsgi
   handlers:
     - include: handlers/uwsgi.yml
