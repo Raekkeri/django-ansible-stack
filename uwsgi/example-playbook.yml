@@ -2,10 +2,14 @@
 ---
 - hosts: webservers
   sudo: yes
-  #vars_files:
-    #- vars/default.yml
+  vars_files:
+    - vars/default.yml
   user: ${user}
   tasks:
     - include: tasks/uwsgi.yml
+      #vars: override these to match the directory structure
+        #chdir: /home/user/project/django_project
+        #home: /home/user/project/venv
+        #module: project.wsgi
   handlers:
     - include: handlers/uwsgi.yml

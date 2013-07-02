@@ -1,0 +1,3 @@
+chdir: /home/vagrant/mysite/mysite
+home: /home/vagrant/mysite/venv
+module: mysite.wsgi
