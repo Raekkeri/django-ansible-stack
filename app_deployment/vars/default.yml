@@ -1,0 +1,4 @@
+app_base_dir: /home/vagrant/app
+app_packages_dir: /home/vagrant/app/packages
+app_current_location: /home/vagrant/app/current
+app_version: default

@@ -1,0 +1,6 @@
+- name: Ensure directories exist
+  file: path=${app_base_dir} state=directory
+  file: path=${app_packages_dir} state=directory
+  file: path="${app_packages_dir}/${app_version}" state=directory
+- name: Ensure virtualenv is set up
+  command: virtualenv venv chdir="${app_packages_dir}/${app_version}" creates=venv
