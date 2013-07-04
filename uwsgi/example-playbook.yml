@@ -1,4 +1,9 @@
 # usage: ansible-playbook example-playbook.yml --extra-vars="user=ssh_user"
+# Variables:
+# - module: django_project.wsgi
+# - chdir: /home/vagrant/mysite/project_root
+# - home: /home/vagrant/mysite/virtualenv
+
 ---
 - hosts: webservers
   sudo: yes
