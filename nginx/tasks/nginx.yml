@@ -1,5 +1,5 @@
 - name: Ensure Nginx is at the desired version
   apt: pkg=nginx state=latest
 - name: Ensure main Nginx configuration file is up to date
-  template: src=templates/nginx.conf dest=/etc/nginx/nginx.conf
+  template: src=nginx.conf dest=/etc/nginx/nginx.conf
   notify: restart nginx
