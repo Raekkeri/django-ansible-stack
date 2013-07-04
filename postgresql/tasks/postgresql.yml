@@ -1,4 +1,6 @@
 - name: Ensure PostgreSQL is at the desired version
   apt: pkg=postgresql state=latest
+- name: Ensure PostgreSQL dev is at the desired version
+  apt: pkg=libpq-dev state=latest
 - name: Ensure PostgreSQL is running
   service: name=postgresql state=started
