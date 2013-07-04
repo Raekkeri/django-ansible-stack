@@ -1,4 +1,4 @@
-# usage: ansible-playbook example-playbook.yml --extra-vars="user=ssh_user"
+# usage: ansible-playbook example-playbook.yml --extra-vars="user=ssh_user django_static_dir=/path/to/static/files"
 ---
 - hosts: webservers
   sudo: yes
