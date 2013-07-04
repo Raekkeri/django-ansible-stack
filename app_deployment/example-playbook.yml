@@ -1,0 +1,19 @@
+# usage: ansible-playbook example-playbook.yml --extra-vars="user=ssh_user"
+---
+- hosts: webservers
+  sudo: yes
+  vars_files:
+    - vars/default.yml
+    - vars/django_settings.yml
+  user: ${user}
+  tasks:
+    - include: tasks/app_deployment.yml
+
+    # Install now some custom applications to
+    # "${app_packages_dir}/${app_version}" directory
+
+    # The following mainly just updates the symlink to
+    # point `${app_current_location}` to the package/version directory
+    - include: tasks/post_app_deployment.yml
+    # Restart the service
+    #- service: name=uwsgi state=restarted
