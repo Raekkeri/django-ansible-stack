@@ -1,2 +1,4 @@
 #
 django_static_dir: /path/to/your/mysite/mysite/static
+server_name: .example.com
+listen: 80
