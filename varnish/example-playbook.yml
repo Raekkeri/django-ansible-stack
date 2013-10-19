@@ -6,6 +6,7 @@
     - vars/default.yml
   user: ${user}
   tasks:
-    - include: tasks/varnish.yml
+    #- include: tasks/varnish.yml
+    - include: tasks/varnish_confs.yml
   handlers:
     - include: handlers/varnish.yml
