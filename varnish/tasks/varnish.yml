@@ -1,0 +1,8 @@
+- name: Ensure Varnish is at the desired version
+  apt: pkg=varnish state=latest
+- name: Ensure /etc/default/varnish configuration file is up to date
+  template: src=varnish_default dest=/etc/default/varnish
+  notify: restart varnish
+- name: Ensure varnish.vcl configuration file is up to date
+  template: src=varnish.vcl dest=/etc/varnish/default.vcl
+  notify: reload varnish
