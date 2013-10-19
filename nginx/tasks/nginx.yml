@@ -3,3 +3,6 @@
 - name: Ensure main Nginx configuration file is up to date
   template: src=nginx.conf dest=/etc/nginx/nginx.conf
   notify: restart nginx
+- name: Ensure Nginx does not have a default configuration
+  file: path=/etc/nginx/sites-enabled/default state=absent
+  notify: restart nginx
