@@ -1,12 +1,13 @@
 # usage: ansible-playbook example-playbook.yml --extra-vars="user=ssh_user django_static_dir=/path/to/static/files"
 ---
-- hosts: raspsutin_vagrant
+- hosts: webservers
   sudo: yes
   vars_files:
     - vars/default.yml
   user: ${user}
   tasks:
     #- include: tasks/varnish.yml
+    #- include: tasks/varnish_from_source.yml
     - include: tasks/varnish_confs.yml
   handlers:
     - include: handlers/varnish.yml

@@ -3,3 +3,5 @@ varnish_storage: "file,/tmp,64m"
 varnish_backend_host: 127.0.0.1
 varnish_backend_port: 8080
 varnish_service_name: varnish
+varnish_from_source_working_dir: "/opt/"
+varnish_secret: "54f45f2a-2dac-48e0-b561-824a7564fc96"
