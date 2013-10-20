@@ -1,4 +1,4 @@
-- name: Ensure Python development tools are availble
+- name: Ensure Python development tools are available
   apt: pkg=python-dev state=latest
 - name: Ensure virtualenv is installed
   apt: pkg=python-virtualenv state=latest
