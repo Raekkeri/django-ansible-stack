@@ -1,4 +1,3 @@
-vcl 4.0;
 # This is a basic VCL configuration file for varnish.  See the vcl(7)
 # man page for details on VCL syntax and semantics.
 # 
@@ -14,7 +13,7 @@ backend default {
 # redefine any of these subroutines, the built-in logic will be
 # appended to your code.
 sub vcl_recv {
-    if (req.url ~ "^/$") {
+    if (req.url ~ "^/$" || req.url ~ "^/static") {
         unset req.http.cookie;
     }
 }
@@ -80,6 +79,11 @@ sub vcl_recv {
 #     return (fetch);
 # }
 # 
+sub vcl_fetch {
+    if (req.url ~ "^/static") {
+        set beresp.ttl = 3600s;
+    }
+}
 # sub vcl_fetch {
 #     if (beresp.ttl <= 0s ||
 #         beresp.http.Set-Cookie ||
