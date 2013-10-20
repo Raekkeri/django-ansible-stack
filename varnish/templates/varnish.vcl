@@ -13,7 +13,7 @@ backend default {
 # redefine any of these subroutines, the built-in logic will be
 # appended to your code.
 sub vcl_recv {
-    if (req.url ~ "^/$" || req.url ~ "^/static") {
+    if (req.url !~ "^/admin/") {
         unset req.http.cookie;
     }
 }
