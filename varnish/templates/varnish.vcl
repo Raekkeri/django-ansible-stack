@@ -79,9 +79,14 @@ sub vcl_recv {
 #     return (fetch);
 # }
 # 
-sub vcl_fetch {
+sub vcl_f3etch {
+    if (req.url !~ "^/admin/") {
+        unset beresp.http.set-cookie;
+    }
     if (req.url ~ "^/static") {
         set beresp.ttl = 3600s;
+    } else {
+        set beresp.ttl = 600s;
     }
 }
 # sub vcl_fetch {

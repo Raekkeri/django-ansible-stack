@@ -9,3 +9,5 @@
 - name: Ensure varnish_secret is in place
   template: src=varnish_secret dest=/etc/varnish/secret
   notify: restart varnish
+- name: Ensure varnish is running
+  service: name=varnish state=started
