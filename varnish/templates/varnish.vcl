@@ -79,7 +79,7 @@ sub vcl_recv {
 #     return (fetch);
 # }
 # 
-sub vcl_f3etch {
+sub vcl_fetch {
     if (req.url !~ "^/admin/") {
         unset beresp.http.set-cookie;
     }
