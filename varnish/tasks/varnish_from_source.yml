@@ -1,5 +1,7 @@
 - name: Ensure working directory is set up
   file: path=${varnish_from_source_working_dir} state=directory
+- name: Ensure git is installed
+  apt: name=git
 - name: Ensure correct git repo is checked out
   git:
     repo=git://git.varnish-cache.org/varnish-cache

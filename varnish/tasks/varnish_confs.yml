@@ -4,7 +4,7 @@
 - name: Ensure /etc/varnish/ exists
   file: path=/etc/varnish/ state=directory
 - name: Ensure varnish.vcl configuration file is up to date
-  template: src=varnish.vcl dest=/etc/varnish/default.vcl
+  template: src=${varnish_vcl_file} dest=/etc/varnish/default.vcl
   notify: reload varnish
 - name: Ensure varnish_secret is in place
   template: src=varnish_secret dest=/etc/varnish/secret
