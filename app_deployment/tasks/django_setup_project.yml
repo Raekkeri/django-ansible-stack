@@ -1,0 +1,12 @@
+- name: Ensure env_settings is up-to-date
+  template:
+    src=${env_settings_tmpl}
+    dest="${app_packages_dir}/${app_version}/${env_settings_path}"
+    #dest="${app_packages_dir}/${app_version}/src/sportscal/env_settings.py"
+- name: Run django collectstatic
+  django_manage:
+    command=collectstatic
+    virtualenv="${app_packages_dir}/${app_version}/venv/"
+    app_path="${app_packages_dir}/${app_version}"
+    link=yes
+    settings=sportscal.env_settings

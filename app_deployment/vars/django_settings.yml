@@ -1,1 +1,3 @@
 db_host: localhost
+django_project_name: foobar
+env_settings_path: src/${django_project_name}/env_settings.py
