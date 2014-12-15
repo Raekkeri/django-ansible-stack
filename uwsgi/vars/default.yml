@@ -1,3 +1,4 @@
 chdir: /home/vagrant/mysite/mysite
 home: /home/vagrant/mysite/venv
 module: mysite.wsgi
+uwsgi_conf_file: mysite.ini
