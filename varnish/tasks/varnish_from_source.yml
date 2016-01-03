@@ -1,11 +1,11 @@
 - name: Ensure working directory is set up
-  file: path=${varnish_from_source_working_dir} state=directory
+  file: path={{ varnish_from_source_working_dir }} state=directory
 - name: Ensure git is installed
   apt: name=git
 - name: Ensure correct git repo is checked out
   git:
     repo=git://git.varnish-cache.org/varnish-cache
-    dest="${varnish_from_source_working_dir}/varnish-cache/"
+    dest="{{ varnish_from_source_working_dir }}/varnish-cache/"
     version="varnish-3.0.2"
 - apt: pkg=automake
 - apt: pkg=libtool
@@ -16,13 +16,13 @@
 - apt: pkg=pkg-config
 - apt: pkg=make
 - name: Run autogen.sh
-  command: sh autogen.sh chdir="${varnish_from_source_working_dir}/varnish-cache/"
+  command: sh autogen.sh chdir="{{ varnish_from_source_working_dir}}/varnish-cache/"
 - name: Run configure
-  command: sh configure --enable-diagnostics --enable-debugging-symbols chdir="${varnish_from_source_working_dir}/varnish-cache/"
+  command: sh configure --enable-diagnostics --enable-debugging-symbols chdir="{{ varnish_from_source_working_dir }}/varnish-cache/"
 - name: Run make
-  command: make chdir="${varnish_from_source_working_dir}/varnish-cache/"
+  command: make chdir="{{ varnish_from_source_working_dir }}/varnish-cache/"
 - name: Run install
-  command: make install chdir="${varnish_from_source_working_dir}/varnish-cache/"
+  command: make install chdir="{{ varnish_from_source_working_dir }}/varnish-cache/"
 - name: Ensure init.d is in place
   template: src=varnish.init.d dest=/etc/init.d/varnish mode=0755
   notify: restart varnish

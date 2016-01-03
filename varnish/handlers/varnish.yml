@@ -1,6 +1,6 @@
 - name: run varnish
-  action: service name=${varnish_service_name} state=restarted
+  action: service name={{ varnish_service_name }} state=restarted
 - name: restart varnish
-  action: service name=${varnish_service_name} state=restarted
+  action: service name={{ varnish_service_name }} state=restarted
 - name: reload varnish
-  action: service name=${varnish_service_name} state=reloaded
+  action: service name={{ varnish_service_name }} state=reloaded
