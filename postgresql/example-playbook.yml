@@ -4,8 +4,6 @@
   sudo: yes
   vars_files:
     - vars/default.yml
-  user: ${user}
+  user: "{{ user }}"
   tasks:
     - include: tasks/postgresql.yml
-  #handlers:
-    #- include: handlers/nginx.yml
