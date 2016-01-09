@@ -8,5 +8,6 @@
   tasks:
     - include: tasks/nginx.yml
     - include: tasks/nginx_uwsgi.yml
+    - include: tasks/nginx_ssl_termination.yml
   handlers:
     - include: handlers/nginx.yml

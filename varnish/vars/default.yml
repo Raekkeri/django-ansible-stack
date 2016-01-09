@@ -1,4 +1,5 @@
 varnish_listen_port: 80
+varnish_listen_host: localhost
 varnish_storage: "file,/tmp,64m"
 varnish_backend_host: 127.0.0.1
 varnish_backend_port: 8080

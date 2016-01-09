@@ -1,0 +1,8 @@
+- name: Ensure nginx runs with the latest ssl termination file
+  template: src=nginx_ssl_termination.conf dest=/etc/nginx/sites-available/nginx_ssl_termination.conf
+  notify:
+    - restart nginx
+- name: Enable ssl termination conf
+  file: src=/etc/nginx/sites-available/nginx_ssl_termination.conf dest=/etc/nginx/sites-enabled/nginx_ssl_termination.conf state=link
+  notify:
+    - restart nginx

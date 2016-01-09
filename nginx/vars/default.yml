@@ -3,3 +3,5 @@ django_static_dir: /path/to/your/mysite/mysite/static
 server_name: .example.com
 listen: 8080
 media_root: /vagrant/media
+
+ssl_proxy_pass: http://127.0.0.1:6081
