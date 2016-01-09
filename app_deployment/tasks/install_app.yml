@@ -1,8 +1,8 @@
 - name: Install project in develop mode
   command:
-    ${app_packages_dir}/${app_version}/venv/bin/python setup.py develop
-    chdir="${app_packages_dir}/${app_version}"
+    "{{ app_packages_dir }}/{{ app_version }}/venv/bin/python setup.py develop"
+    chdir="{{ app_packages_dir }}/{{ app_version }}"
 - name: Install requirements
   pip:
-    virtualenv="${app_packages_dir}/${app_version}/venv/"
-    requirements="${app_packages_dir}/${app_version}/requirements.txt"
+    virtualenv="{{ app_packages_dir }}/{{ app_version }}/venv/"
+    requirements="{{ app_packages_dir }}/{{ app_version }}/requirements.txt"

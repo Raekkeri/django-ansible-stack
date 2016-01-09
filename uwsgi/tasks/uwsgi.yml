@@ -3,7 +3,7 @@
 - name: Ensure Python uwsgi plugin is installed
   apt: pkg=uwsgi-plugin-python
 - name: Ensure runs with the latest uwsgi configuration file
-  template: src=${uwsgi_conf_file} dest=/etc/uwsgi/apps-available/mysite.ini
+  template: src={{ uwsgi_conf_file }} dest=/etc/uwsgi/apps-available/mysite.ini
   notify:
     - restart uwsgi
 - name: Enable mysite app
